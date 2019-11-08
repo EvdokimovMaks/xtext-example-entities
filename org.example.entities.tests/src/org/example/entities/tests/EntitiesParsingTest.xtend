@@ -11,20 +11,36 @@ import org.example.entities.entities.Model
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.^extension.ExtendWith
+import org.junit.Assert
+import org.example.entities.entities.EntityType
 
 @ExtendWith(InjectionExtension)
 @InjectWith(EntitiesInjectorProvider)
 class EntitiesParsingTest {
-	@Inject
-	ParseHelper<Model> parseHelper
+	
+	@Inject extension ParseHelper<Model>
 	
 	@Test
 	def void loadModel() {
-		val result = parseHelper.parse('''
-			Hello Xtext!
-		''')
-		Assertions.assertNotNull(result)
-		val errors = result.eResource.errors
+		val model = '''
+			entity MyEntity { }
+		'''.parse
+		Assertions.assertNotNull(model)
+		val errors = model.eResource.errors
 		Assertions.assertTrue(errors.isEmpty, '''Unexpected errors: «errors.join(", ")»''')
+	}
+	
+	@Test
+	def void testParsing() {
+		val model = '''
+			entity MyEntity {
+				MyEntity attribute;
+			}
+		'''.parse
+		val entity = model.entities.get(0)
+		Assert.assertEquals("MyEntity", entity.name)
+		val attribute = entity.attributes.get(0)
+		Assert.assertEquals("attribute", attribute.name)
+		Assert.assertEquals("MyEntity", (attribute.type.elementType as EntityType).entity.name);
 	}
 }
