@@ -3,7 +3,12 @@
  */
 package org.example.entities.ui.outline;
 
+import java.util.function.Consumer;
 import org.eclipse.xtext.ui.editor.outline.impl.DefaultOutlineTreeProvider;
+import org.eclipse.xtext.ui.editor.outline.impl.DocumentRootNode;
+import org.example.entities.entities.Attribute;
+import org.example.entities.entities.Entity;
+import org.example.entities.entities.Model;
 
 /**
  * Customization of the default outline structure.
@@ -12,4 +17,14 @@ import org.eclipse.xtext.ui.editor.outline.impl.DefaultOutlineTreeProvider;
  */
 @SuppressWarnings("all")
 public class EntitiesOutlineTreeProvider extends DefaultOutlineTreeProvider {
+  public boolean _isLeaf(final Attribute a) {
+    return true;
+  }
+  
+  public void _createChildren(final DocumentRootNode outlineNode, final Model model) {
+    final Consumer<Entity> _function = (Entity entity) -> {
+      this.createNode(outlineNode, entity);
+    };
+    model.getEntities().forEach(_function);
+  }
 }
