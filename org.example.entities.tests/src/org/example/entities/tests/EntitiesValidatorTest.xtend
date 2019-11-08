@@ -52,6 +52,14 @@ class EntitiesValidatorTest {
 		)
 	}
 	
+	@Test
+	def void testValidHierarchy() {
+		'''
+			entity A {}
+			entity B extends A {}
+		'''.parse.assertNoErrors
+	}
+	
 	def private assertCycleInHyerarchy(Model m, String entityName) {
 		m.assertError(
 			EntitiesPackage.eINSTANCE.entity,
