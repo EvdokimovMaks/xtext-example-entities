@@ -13,7 +13,7 @@ package org.example.entities.entities;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.example.entities.entities.EntityType#getTypeName <em>Type Name</em>}</li>
+ *   <li>{@link org.example.entities.entities.EntityType#getEntity <em>Entity</em>}</li>
  * </ul>
  *
  * @see org.example.entities.entities.EntitiesPackage#getEntityType()
@@ -23,25 +23,25 @@ package org.example.entities.entities;
 public interface EntityType extends ElementType
 {
   /**
-   * Returns the value of the '<em><b>Type Name</b></em>' attribute.
+   * Returns the value of the '<em><b>Entity</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Type Name</em>' attribute.
-   * @see #setTypeName(String)
-   * @see org.example.entities.entities.EntitiesPackage#getEntityType_TypeName()
+   * @return the value of the '<em>Entity</em>' reference.
+   * @see #setEntity(Entity)
+   * @see org.example.entities.entities.EntitiesPackage#getEntityType_Entity()
    * @model
    * @generated
    */
-  String getTypeName();
+  Entity getEntity();
 
   /**
-   * Sets the value of the '{@link org.example.entities.entities.EntityType#getTypeName <em>Type Name</em>}' attribute.
+   * Sets the value of the '{@link org.example.entities.entities.EntityType#getEntity <em>Entity</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Type Name</em>' attribute.
-   * @see #getTypeName()
+   * @param value the new value of the '<em>Entity</em>' reference.
+   * @see #getEntity()
    * @generated
    */
-  void setTypeName(String value);
+  void setEntity(Entity value);
 
 } // EntityType

@@ -6,10 +6,12 @@ package org.example.entities.entities.impl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.example.entities.entities.EntitiesPackage;
+import org.example.entities.entities.Entity;
 import org.example.entities.entities.EntityType;
 
 /**
@@ -20,7 +22,7 @@ import org.example.entities.entities.EntityType;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.example.entities.entities.impl.EntityTypeImpl#getTypeName <em>Type Name</em>}</li>
+ *   <li>{@link org.example.entities.entities.impl.EntityTypeImpl#getEntity <em>Entity</em>}</li>
  * </ul>
  *
  * @generated
@@ -28,24 +30,14 @@ import org.example.entities.entities.EntityType;
 public class EntityTypeImpl extends ElementTypeImpl implements EntityType
 {
   /**
-   * The default value of the '{@link #getTypeName() <em>Type Name</em>}' attribute.
+   * The cached value of the '{@link #getEntity() <em>Entity</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTypeName()
+   * @see #getEntity()
    * @generated
    * @ordered
    */
-  protected static final String TYPE_NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getTypeName() <em>Type Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getTypeName()
-   * @generated
-   * @ordered
-   */
-  protected String typeName = TYPE_NAME_EDEFAULT;
+  protected Entity entity;
 
   /**
    * <!-- begin-user-doc -->
@@ -74,9 +66,29 @@ public class EntityTypeImpl extends ElementTypeImpl implements EntityType
    * @generated
    */
   @Override
-  public String getTypeName()
+  public Entity getEntity()
   {
-    return typeName;
+    if (entity != null && entity.eIsProxy())
+    {
+      InternalEObject oldEntity = (InternalEObject)entity;
+      entity = (Entity)eResolveProxy(oldEntity);
+      if (entity != oldEntity)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, EntitiesPackage.ENTITY_TYPE__ENTITY, oldEntity, entity));
+      }
+    }
+    return entity;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Entity basicGetEntity()
+  {
+    return entity;
   }
 
   /**
@@ -85,12 +97,12 @@ public class EntityTypeImpl extends ElementTypeImpl implements EntityType
    * @generated
    */
   @Override
-  public void setTypeName(String newTypeName)
+  public void setEntity(Entity newEntity)
   {
-    String oldTypeName = typeName;
-    typeName = newTypeName;
+    Entity oldEntity = entity;
+    entity = newEntity;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EntitiesPackage.ENTITY_TYPE__TYPE_NAME, oldTypeName, typeName));
+      eNotify(new ENotificationImpl(this, Notification.SET, EntitiesPackage.ENTITY_TYPE__ENTITY, oldEntity, entity));
   }
 
   /**
@@ -103,8 +115,9 @@ public class EntityTypeImpl extends ElementTypeImpl implements EntityType
   {
     switch (featureID)
     {
-      case EntitiesPackage.ENTITY_TYPE__TYPE_NAME:
-        return getTypeName();
+      case EntitiesPackage.ENTITY_TYPE__ENTITY:
+        if (resolve) return getEntity();
+        return basicGetEntity();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -119,8 +132,8 @@ public class EntityTypeImpl extends ElementTypeImpl implements EntityType
   {
     switch (featureID)
     {
-      case EntitiesPackage.ENTITY_TYPE__TYPE_NAME:
-        setTypeName((String)newValue);
+      case EntitiesPackage.ENTITY_TYPE__ENTITY:
+        setEntity((Entity)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -136,8 +149,8 @@ public class EntityTypeImpl extends ElementTypeImpl implements EntityType
   {
     switch (featureID)
     {
-      case EntitiesPackage.ENTITY_TYPE__TYPE_NAME:
-        setTypeName(TYPE_NAME_EDEFAULT);
+      case EntitiesPackage.ENTITY_TYPE__ENTITY:
+        setEntity((Entity)null);
         return;
     }
     super.eUnset(featureID);
@@ -153,27 +166,10 @@ public class EntityTypeImpl extends ElementTypeImpl implements EntityType
   {
     switch (featureID)
     {
-      case EntitiesPackage.ENTITY_TYPE__TYPE_NAME:
-        return TYPE_NAME_EDEFAULT == null ? typeName != null : !TYPE_NAME_EDEFAULT.equals(typeName);
+      case EntitiesPackage.ENTITY_TYPE__ENTITY:
+        return entity != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (typeName: ");
-    result.append(typeName);
-    result.append(')');
-    return result.toString();
   }
 
 } //EntityTypeImpl

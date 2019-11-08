@@ -797,10 +797,10 @@ public class InternalEntitiesParser extends AbstractInternalAntlrParser {
             int alt6=2;
             int LA6_0 = input.LA(1);
 
-            if ( (LA6_0==RULE_ID) ) {
+            if ( ((LA6_0>=18 && LA6_0<=20)) ) {
                 alt6=1;
             }
-            else if ( ((LA6_0>=18 && LA6_0<=20)) ) {
+            else if ( (LA6_0==RULE_ID) ) {
                 alt6=2;
             }
             else {
@@ -905,104 +905,34 @@ public class InternalEntitiesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEntityType"
-    // InternalEntities.g:366:1: ruleEntityType returns [EObject current=null] : ( ( (lv_typeName_0_1= 'string' | lv_typeName_0_2= 'int' | lv_typeName_0_3= 'boolean' ) ) ) ;
+    // InternalEntities.g:366:1: ruleEntityType returns [EObject current=null] : ( (otherlv_0= RULE_ID ) ) ;
     public final EObject ruleEntityType() throws RecognitionException {
         EObject current = null;
 
-        Token lv_typeName_0_1=null;
-        Token lv_typeName_0_2=null;
-        Token lv_typeName_0_3=null;
+        Token otherlv_0=null;
 
 
         	enterRule();
 
         try {
-            // InternalEntities.g:372:2: ( ( ( (lv_typeName_0_1= 'string' | lv_typeName_0_2= 'int' | lv_typeName_0_3= 'boolean' ) ) ) )
-            // InternalEntities.g:373:2: ( ( (lv_typeName_0_1= 'string' | lv_typeName_0_2= 'int' | lv_typeName_0_3= 'boolean' ) ) )
+            // InternalEntities.g:372:2: ( ( (otherlv_0= RULE_ID ) ) )
+            // InternalEntities.g:373:2: ( (otherlv_0= RULE_ID ) )
             {
-            // InternalEntities.g:373:2: ( ( (lv_typeName_0_1= 'string' | lv_typeName_0_2= 'int' | lv_typeName_0_3= 'boolean' ) ) )
-            // InternalEntities.g:374:3: ( (lv_typeName_0_1= 'string' | lv_typeName_0_2= 'int' | lv_typeName_0_3= 'boolean' ) )
+            // InternalEntities.g:373:2: ( (otherlv_0= RULE_ID ) )
+            // InternalEntities.g:374:3: (otherlv_0= RULE_ID )
             {
-            // InternalEntities.g:374:3: ( (lv_typeName_0_1= 'string' | lv_typeName_0_2= 'int' | lv_typeName_0_3= 'boolean' ) )
-            // InternalEntities.g:375:4: (lv_typeName_0_1= 'string' | lv_typeName_0_2= 'int' | lv_typeName_0_3= 'boolean' )
+            // InternalEntities.g:374:3: (otherlv_0= RULE_ID )
+            // InternalEntities.g:375:4: otherlv_0= RULE_ID
             {
-            // InternalEntities.g:375:4: (lv_typeName_0_1= 'string' | lv_typeName_0_2= 'int' | lv_typeName_0_3= 'boolean' )
-            int alt7=3;
-            switch ( input.LA(1) ) {
-            case 18:
-                {
-                alt7=1;
-                }
-                break;
-            case 19:
-                {
-                alt7=2;
-                }
-                break;
-            case 20:
-                {
-                alt7=3;
-                }
-                break;
-            default:
-                NoViableAltException nvae =
-                    new NoViableAltException("", 7, 0, input);
 
-                throw nvae;
-            }
+            				if (current==null) {
+            					current = createModelElement(grammarAccess.getEntityTypeRule());
+            				}
+            			
+            otherlv_0=(Token)match(input,RULE_ID,FOLLOW_2); 
 
-            switch (alt7) {
-                case 1 :
-                    // InternalEntities.g:376:5: lv_typeName_0_1= 'string'
-                    {
-                    lv_typeName_0_1=(Token)match(input,18,FOLLOW_2); 
-
-                    					newLeafNode(lv_typeName_0_1, grammarAccess.getEntityTypeAccess().getTypeNameStringKeyword_0_0());
-                    				
-
-                    					if (current==null) {
-                    						current = createModelElement(grammarAccess.getEntityTypeRule());
-                    					}
-                    					setWithLastConsumed(current, "typeName", lv_typeName_0_1, null);
-                    				
-
-                    }
-                    break;
-                case 2 :
-                    // InternalEntities.g:387:5: lv_typeName_0_2= 'int'
-                    {
-                    lv_typeName_0_2=(Token)match(input,19,FOLLOW_2); 
-
-                    					newLeafNode(lv_typeName_0_2, grammarAccess.getEntityTypeAccess().getTypeNameIntKeyword_0_1());
-                    				
-
-                    					if (current==null) {
-                    						current = createModelElement(grammarAccess.getEntityTypeRule());
-                    					}
-                    					setWithLastConsumed(current, "typeName", lv_typeName_0_2, null);
-                    				
-
-                    }
-                    break;
-                case 3 :
-                    // InternalEntities.g:398:5: lv_typeName_0_3= 'boolean'
-                    {
-                    lv_typeName_0_3=(Token)match(input,20,FOLLOW_2); 
-
-                    					newLeafNode(lv_typeName_0_3, grammarAccess.getEntityTypeAccess().getTypeNameBooleanKeyword_0_2());
-                    				
-
-                    					if (current==null) {
-                    						current = createModelElement(grammarAccess.getEntityTypeRule());
-                    					}
-                    					setWithLastConsumed(current, "typeName", lv_typeName_0_3, null);
-                    				
-
-                    }
-                    break;
-
-            }
-
+            				newLeafNode(otherlv_0, grammarAccess.getEntityTypeAccess().getEntityEntityCrossReference_0());
+            			
 
             }
 
@@ -1029,7 +959,7 @@ public class InternalEntitiesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBasicType"
-    // InternalEntities.g:414:1: entryRuleBasicType returns [EObject current=null] : iv_ruleBasicType= ruleBasicType EOF ;
+    // InternalEntities.g:389:1: entryRuleBasicType returns [EObject current=null] : iv_ruleBasicType= ruleBasicType EOF ;
     public final EObject entryRuleBasicType() throws RecognitionException {
         EObject current = null;
 
@@ -1037,8 +967,8 @@ public class InternalEntitiesParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalEntities.g:414:50: (iv_ruleBasicType= ruleBasicType EOF )
-            // InternalEntities.g:415:2: iv_ruleBasicType= ruleBasicType EOF
+            // InternalEntities.g:389:50: (iv_ruleBasicType= ruleBasicType EOF )
+            // InternalEntities.g:390:2: iv_ruleBasicType= ruleBasicType EOF
             {
              newCompositeNode(grammarAccess.getBasicTypeRule()); 
             pushFollow(FOLLOW_1);
@@ -1065,34 +995,104 @@ public class InternalEntitiesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBasicType"
-    // InternalEntities.g:421:1: ruleBasicType returns [EObject current=null] : ( (otherlv_0= RULE_ID ) ) ;
+    // InternalEntities.g:396:1: ruleBasicType returns [EObject current=null] : ( ( (lv_typeName_0_1= 'string' | lv_typeName_0_2= 'int' | lv_typeName_0_3= 'boolean' ) ) ) ;
     public final EObject ruleBasicType() throws RecognitionException {
         EObject current = null;
 
-        Token otherlv_0=null;
+        Token lv_typeName_0_1=null;
+        Token lv_typeName_0_2=null;
+        Token lv_typeName_0_3=null;
 
 
         	enterRule();
 
         try {
-            // InternalEntities.g:427:2: ( ( (otherlv_0= RULE_ID ) ) )
-            // InternalEntities.g:428:2: ( (otherlv_0= RULE_ID ) )
+            // InternalEntities.g:402:2: ( ( ( (lv_typeName_0_1= 'string' | lv_typeName_0_2= 'int' | lv_typeName_0_3= 'boolean' ) ) ) )
+            // InternalEntities.g:403:2: ( ( (lv_typeName_0_1= 'string' | lv_typeName_0_2= 'int' | lv_typeName_0_3= 'boolean' ) ) )
             {
-            // InternalEntities.g:428:2: ( (otherlv_0= RULE_ID ) )
-            // InternalEntities.g:429:3: (otherlv_0= RULE_ID )
+            // InternalEntities.g:403:2: ( ( (lv_typeName_0_1= 'string' | lv_typeName_0_2= 'int' | lv_typeName_0_3= 'boolean' ) ) )
+            // InternalEntities.g:404:3: ( (lv_typeName_0_1= 'string' | lv_typeName_0_2= 'int' | lv_typeName_0_3= 'boolean' ) )
             {
-            // InternalEntities.g:429:3: (otherlv_0= RULE_ID )
-            // InternalEntities.g:430:4: otherlv_0= RULE_ID
+            // InternalEntities.g:404:3: ( (lv_typeName_0_1= 'string' | lv_typeName_0_2= 'int' | lv_typeName_0_3= 'boolean' ) )
+            // InternalEntities.g:405:4: (lv_typeName_0_1= 'string' | lv_typeName_0_2= 'int' | lv_typeName_0_3= 'boolean' )
             {
+            // InternalEntities.g:405:4: (lv_typeName_0_1= 'string' | lv_typeName_0_2= 'int' | lv_typeName_0_3= 'boolean' )
+            int alt7=3;
+            switch ( input.LA(1) ) {
+            case 18:
+                {
+                alt7=1;
+                }
+                break;
+            case 19:
+                {
+                alt7=2;
+                }
+                break;
+            case 20:
+                {
+                alt7=3;
+                }
+                break;
+            default:
+                NoViableAltException nvae =
+                    new NoViableAltException("", 7, 0, input);
 
-            				if (current==null) {
-            					current = createModelElement(grammarAccess.getBasicTypeRule());
-            				}
-            			
-            otherlv_0=(Token)match(input,RULE_ID,FOLLOW_2); 
+                throw nvae;
+            }
 
-            				newLeafNode(otherlv_0, grammarAccess.getBasicTypeAccess().getEntityEntityCrossReference_0());
-            			
+            switch (alt7) {
+                case 1 :
+                    // InternalEntities.g:406:5: lv_typeName_0_1= 'string'
+                    {
+                    lv_typeName_0_1=(Token)match(input,18,FOLLOW_2); 
+
+                    					newLeafNode(lv_typeName_0_1, grammarAccess.getBasicTypeAccess().getTypeNameStringKeyword_0_0());
+                    				
+
+                    					if (current==null) {
+                    						current = createModelElement(grammarAccess.getBasicTypeRule());
+                    					}
+                    					setWithLastConsumed(current, "typeName", lv_typeName_0_1, null);
+                    				
+
+                    }
+                    break;
+                case 2 :
+                    // InternalEntities.g:417:5: lv_typeName_0_2= 'int'
+                    {
+                    lv_typeName_0_2=(Token)match(input,19,FOLLOW_2); 
+
+                    					newLeafNode(lv_typeName_0_2, grammarAccess.getBasicTypeAccess().getTypeNameIntKeyword_0_1());
+                    				
+
+                    					if (current==null) {
+                    						current = createModelElement(grammarAccess.getBasicTypeRule());
+                    					}
+                    					setWithLastConsumed(current, "typeName", lv_typeName_0_2, null);
+                    				
+
+                    }
+                    break;
+                case 3 :
+                    // InternalEntities.g:428:5: lv_typeName_0_3= 'boolean'
+                    {
+                    lv_typeName_0_3=(Token)match(input,20,FOLLOW_2); 
+
+                    					newLeafNode(lv_typeName_0_3, grammarAccess.getBasicTypeAccess().getTypeNameBooleanKeyword_0_2());
+                    				
+
+                    					if (current==null) {
+                    						current = createModelElement(grammarAccess.getBasicTypeRule());
+                    					}
+                    					setWithLastConsumed(current, "typeName", lv_typeName_0_3, null);
+                    				
+
+                    }
+                    break;
+
+            }
+
 
             }
 

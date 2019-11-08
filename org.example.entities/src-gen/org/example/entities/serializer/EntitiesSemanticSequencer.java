@@ -99,16 +99,10 @@ public class EntitiesSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     BasicType returns BasicType
 	 *
 	 * Constraint:
-	 *     entity=[Entity|ID]
+	 *     (typeName='string' | typeName='int' | typeName='boolean')
 	 */
 	protected void sequence_BasicType(ISerializationContext context, BasicType semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, EntitiesPackage.Literals.BASIC_TYPE__ENTITY) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EntitiesPackage.Literals.BASIC_TYPE__ENTITY));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getBasicTypeAccess().getEntityEntityIDTerminalRuleCall_0_1(), semanticObject.eGet(EntitiesPackage.Literals.BASIC_TYPE__ENTITY, false));
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -118,10 +112,16 @@ public class EntitiesSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     EntityType returns EntityType
 	 *
 	 * Constraint:
-	 *     (typeName='string' | typeName='int' | typeName='boolean')
+	 *     entity=[Entity|ID]
 	 */
 	protected void sequence_EntityType(ISerializationContext context, EntityType semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, EntitiesPackage.Literals.ENTITY_TYPE__ENTITY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EntitiesPackage.Literals.ENTITY_TYPE__ENTITY));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getEntityTypeAccess().getEntityEntityIDTerminalRuleCall_0_1(), semanticObject.eGet(EntitiesPackage.Literals.ENTITY_TYPE__ENTITY, false));
+		feeder.finish();
 	}
 	
 	

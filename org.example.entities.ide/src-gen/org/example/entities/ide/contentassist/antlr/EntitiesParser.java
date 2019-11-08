@@ -32,7 +32,7 @@ public class EntitiesParser extends AbstractContentAssistParser {
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, EntitiesGrammarAccess grammarAccess) {
 			builder.put(grammarAccess.getElementTypeAccess().getAlternatives(), "rule__ElementType__Alternatives");
-			builder.put(grammarAccess.getEntityTypeAccess().getTypeNameAlternatives_0(), "rule__EntityType__TypeNameAlternatives_0");
+			builder.put(grammarAccess.getBasicTypeAccess().getTypeNameAlternatives_0(), "rule__BasicType__TypeNameAlternatives_0");
 			builder.put(grammarAccess.getEntityAccess().getGroup(), "rule__Entity__Group__0");
 			builder.put(grammarAccess.getEntityAccess().getGroup_2(), "rule__Entity__Group_2__0");
 			builder.put(grammarAccess.getAttributeAccess().getGroup(), "rule__Attribute__Group__0");
@@ -47,8 +47,8 @@ public class EntitiesParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getAttributeTypeAccess().getElementTypeAssignment_0(), "rule__AttributeType__ElementTypeAssignment_0");
 			builder.put(grammarAccess.getAttributeTypeAccess().getArrayAssignment_1_0(), "rule__AttributeType__ArrayAssignment_1_0");
 			builder.put(grammarAccess.getAttributeTypeAccess().getLengthAssignment_1_1(), "rule__AttributeType__LengthAssignment_1_1");
-			builder.put(grammarAccess.getEntityTypeAccess().getTypeNameAssignment(), "rule__EntityType__TypeNameAssignment");
-			builder.put(grammarAccess.getBasicTypeAccess().getEntityAssignment(), "rule__BasicType__EntityAssignment");
+			builder.put(grammarAccess.getEntityTypeAccess().getEntityAssignment(), "rule__EntityType__EntityAssignment");
+			builder.put(grammarAccess.getBasicTypeAccess().getTypeNameAssignment(), "rule__BasicType__TypeNameAssignment");
 		}
 	}
 	

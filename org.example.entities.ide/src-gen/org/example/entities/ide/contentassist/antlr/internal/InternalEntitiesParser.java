@@ -512,31 +512,31 @@ public class InternalEntitiesParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "ruleEntityType"
-    // InternalEntities.g:187:1: ruleEntityType : ( ( rule__EntityType__TypeNameAssignment ) ) ;
+    // InternalEntities.g:187:1: ruleEntityType : ( ( rule__EntityType__EntityAssignment ) ) ;
     public final void ruleEntityType() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEntities.g:191:2: ( ( ( rule__EntityType__TypeNameAssignment ) ) )
-            // InternalEntities.g:192:2: ( ( rule__EntityType__TypeNameAssignment ) )
+            // InternalEntities.g:191:2: ( ( ( rule__EntityType__EntityAssignment ) ) )
+            // InternalEntities.g:192:2: ( ( rule__EntityType__EntityAssignment ) )
             {
-            // InternalEntities.g:192:2: ( ( rule__EntityType__TypeNameAssignment ) )
-            // InternalEntities.g:193:3: ( rule__EntityType__TypeNameAssignment )
+            // InternalEntities.g:192:2: ( ( rule__EntityType__EntityAssignment ) )
+            // InternalEntities.g:193:3: ( rule__EntityType__EntityAssignment )
             {
-             before(grammarAccess.getEntityTypeAccess().getTypeNameAssignment()); 
-            // InternalEntities.g:194:3: ( rule__EntityType__TypeNameAssignment )
-            // InternalEntities.g:194:4: rule__EntityType__TypeNameAssignment
+             before(grammarAccess.getEntityTypeAccess().getEntityAssignment()); 
+            // InternalEntities.g:194:3: ( rule__EntityType__EntityAssignment )
+            // InternalEntities.g:194:4: rule__EntityType__EntityAssignment
             {
             pushFollow(FOLLOW_2);
-            rule__EntityType__TypeNameAssignment();
+            rule__EntityType__EntityAssignment();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getEntityTypeAccess().getTypeNameAssignment()); 
+             after(grammarAccess.getEntityTypeAccess().getEntityAssignment()); 
 
             }
 
@@ -589,31 +589,31 @@ public class InternalEntitiesParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "ruleBasicType"
-    // InternalEntities.g:212:1: ruleBasicType : ( ( rule__BasicType__EntityAssignment ) ) ;
+    // InternalEntities.g:212:1: ruleBasicType : ( ( rule__BasicType__TypeNameAssignment ) ) ;
     public final void ruleBasicType() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEntities.g:216:2: ( ( ( rule__BasicType__EntityAssignment ) ) )
-            // InternalEntities.g:217:2: ( ( rule__BasicType__EntityAssignment ) )
+            // InternalEntities.g:216:2: ( ( ( rule__BasicType__TypeNameAssignment ) ) )
+            // InternalEntities.g:217:2: ( ( rule__BasicType__TypeNameAssignment ) )
             {
-            // InternalEntities.g:217:2: ( ( rule__BasicType__EntityAssignment ) )
-            // InternalEntities.g:218:3: ( rule__BasicType__EntityAssignment )
+            // InternalEntities.g:217:2: ( ( rule__BasicType__TypeNameAssignment ) )
+            // InternalEntities.g:218:3: ( rule__BasicType__TypeNameAssignment )
             {
-             before(grammarAccess.getBasicTypeAccess().getEntityAssignment()); 
-            // InternalEntities.g:219:3: ( rule__BasicType__EntityAssignment )
-            // InternalEntities.g:219:4: rule__BasicType__EntityAssignment
+             before(grammarAccess.getBasicTypeAccess().getTypeNameAssignment()); 
+            // InternalEntities.g:219:3: ( rule__BasicType__TypeNameAssignment )
+            // InternalEntities.g:219:4: rule__BasicType__TypeNameAssignment
             {
             pushFollow(FOLLOW_2);
-            rule__BasicType__EntityAssignment();
+            rule__BasicType__TypeNameAssignment();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getBasicTypeAccess().getEntityAssignment()); 
+             after(grammarAccess.getBasicTypeAccess().getTypeNameAssignment()); 
 
             }
 
@@ -646,10 +646,10 @@ public class InternalEntitiesParser extends AbstractInternalContentAssistParser 
             int alt2=2;
             int LA2_0 = input.LA(1);
 
-            if ( (LA2_0==RULE_ID) ) {
+            if ( ((LA2_0>=11 && LA2_0<=13)) ) {
                 alt2=1;
             }
-            else if ( ((LA2_0>=11 && LA2_0<=13)) ) {
+            else if ( (LA2_0==RULE_ID) ) {
                 alt2=2;
             }
             else {
@@ -714,9 +714,9 @@ public class InternalEntitiesParser extends AbstractInternalContentAssistParser 
     // $ANTLR end "rule__ElementType__Alternatives"
 
 
-    // $ANTLR start "rule__EntityType__TypeNameAlternatives_0"
-    // InternalEntities.g:248:1: rule__EntityType__TypeNameAlternatives_0 : ( ( 'string' ) | ( 'int' ) | ( 'boolean' ) );
-    public final void rule__EntityType__TypeNameAlternatives_0() throws RecognitionException {
+    // $ANTLR start "rule__BasicType__TypeNameAlternatives_0"
+    // InternalEntities.g:248:1: rule__BasicType__TypeNameAlternatives_0 : ( ( 'string' ) | ( 'int' ) | ( 'boolean' ) );
+    public final void rule__BasicType__TypeNameAlternatives_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -753,9 +753,9 @@ public class InternalEntitiesParser extends AbstractInternalContentAssistParser 
                     // InternalEntities.g:253:2: ( 'string' )
                     // InternalEntities.g:254:3: 'string'
                     {
-                     before(grammarAccess.getEntityTypeAccess().getTypeNameStringKeyword_0_0()); 
+                     before(grammarAccess.getBasicTypeAccess().getTypeNameStringKeyword_0_0()); 
                     match(input,11,FOLLOW_2); 
-                     after(grammarAccess.getEntityTypeAccess().getTypeNameStringKeyword_0_0()); 
+                     after(grammarAccess.getBasicTypeAccess().getTypeNameStringKeyword_0_0()); 
 
                     }
 
@@ -768,9 +768,9 @@ public class InternalEntitiesParser extends AbstractInternalContentAssistParser 
                     // InternalEntities.g:259:2: ( 'int' )
                     // InternalEntities.g:260:3: 'int'
                     {
-                     before(grammarAccess.getEntityTypeAccess().getTypeNameIntKeyword_0_1()); 
+                     before(grammarAccess.getBasicTypeAccess().getTypeNameIntKeyword_0_1()); 
                     match(input,12,FOLLOW_2); 
-                     after(grammarAccess.getEntityTypeAccess().getTypeNameIntKeyword_0_1()); 
+                     after(grammarAccess.getBasicTypeAccess().getTypeNameIntKeyword_0_1()); 
 
                     }
 
@@ -783,9 +783,9 @@ public class InternalEntitiesParser extends AbstractInternalContentAssistParser 
                     // InternalEntities.g:265:2: ( 'boolean' )
                     // InternalEntities.g:266:3: 'boolean'
                     {
-                     before(grammarAccess.getEntityTypeAccess().getTypeNameBooleanKeyword_0_2()); 
+                     before(grammarAccess.getBasicTypeAccess().getTypeNameBooleanKeyword_0_2()); 
                     match(input,13,FOLLOW_2); 
-                     after(grammarAccess.getEntityTypeAccess().getTypeNameBooleanKeyword_0_2()); 
+                     after(grammarAccess.getBasicTypeAccess().getTypeNameBooleanKeyword_0_2()); 
 
                     }
 
@@ -806,7 +806,7 @@ public class InternalEntitiesParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__EntityType__TypeNameAlternatives_0"
+    // $ANTLR end "rule__BasicType__TypeNameAlternatives_0"
 
 
     // $ANTLR start "rule__Entity__Group__0"
@@ -2500,32 +2500,77 @@ public class InternalEntitiesParser extends AbstractInternalContentAssistParser 
     // $ANTLR end "rule__AttributeType__LengthAssignment_1_1"
 
 
-    // $ANTLR start "rule__EntityType__TypeNameAssignment"
-    // InternalEntities.g:850:1: rule__EntityType__TypeNameAssignment : ( ( rule__EntityType__TypeNameAlternatives_0 ) ) ;
-    public final void rule__EntityType__TypeNameAssignment() throws RecognitionException {
+    // $ANTLR start "rule__EntityType__EntityAssignment"
+    // InternalEntities.g:850:1: rule__EntityType__EntityAssignment : ( ( RULE_ID ) ) ;
+    public final void rule__EntityType__EntityAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEntities.g:854:1: ( ( ( rule__EntityType__TypeNameAlternatives_0 ) ) )
-            // InternalEntities.g:855:2: ( ( rule__EntityType__TypeNameAlternatives_0 ) )
+            // InternalEntities.g:854:1: ( ( ( RULE_ID ) ) )
+            // InternalEntities.g:855:2: ( ( RULE_ID ) )
             {
-            // InternalEntities.g:855:2: ( ( rule__EntityType__TypeNameAlternatives_0 ) )
-            // InternalEntities.g:856:3: ( rule__EntityType__TypeNameAlternatives_0 )
+            // InternalEntities.g:855:2: ( ( RULE_ID ) )
+            // InternalEntities.g:856:3: ( RULE_ID )
             {
-             before(grammarAccess.getEntityTypeAccess().getTypeNameAlternatives_0()); 
-            // InternalEntities.g:857:3: ( rule__EntityType__TypeNameAlternatives_0 )
-            // InternalEntities.g:857:4: rule__EntityType__TypeNameAlternatives_0
+             before(grammarAccess.getEntityTypeAccess().getEntityEntityCrossReference_0()); 
+            // InternalEntities.g:857:3: ( RULE_ID )
+            // InternalEntities.g:858:4: RULE_ID
+            {
+             before(grammarAccess.getEntityTypeAccess().getEntityEntityIDTerminalRuleCall_0_1()); 
+            match(input,RULE_ID,FOLLOW_2); 
+             after(grammarAccess.getEntityTypeAccess().getEntityEntityIDTerminalRuleCall_0_1()); 
+
+            }
+
+             after(grammarAccess.getEntityTypeAccess().getEntityEntityCrossReference_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__EntityType__EntityAssignment"
+
+
+    // $ANTLR start "rule__BasicType__TypeNameAssignment"
+    // InternalEntities.g:869:1: rule__BasicType__TypeNameAssignment : ( ( rule__BasicType__TypeNameAlternatives_0 ) ) ;
+    public final void rule__BasicType__TypeNameAssignment() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalEntities.g:873:1: ( ( ( rule__BasicType__TypeNameAlternatives_0 ) ) )
+            // InternalEntities.g:874:2: ( ( rule__BasicType__TypeNameAlternatives_0 ) )
+            {
+            // InternalEntities.g:874:2: ( ( rule__BasicType__TypeNameAlternatives_0 ) )
+            // InternalEntities.g:875:3: ( rule__BasicType__TypeNameAlternatives_0 )
+            {
+             before(grammarAccess.getBasicTypeAccess().getTypeNameAlternatives_0()); 
+            // InternalEntities.g:876:3: ( rule__BasicType__TypeNameAlternatives_0 )
+            // InternalEntities.g:876:4: rule__BasicType__TypeNameAlternatives_0
             {
             pushFollow(FOLLOW_2);
-            rule__EntityType__TypeNameAlternatives_0();
+            rule__BasicType__TypeNameAlternatives_0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getEntityTypeAccess().getTypeNameAlternatives_0()); 
+             after(grammarAccess.getBasicTypeAccess().getTypeNameAlternatives_0()); 
 
             }
 
@@ -2544,52 +2589,7 @@ public class InternalEntitiesParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__EntityType__TypeNameAssignment"
-
-
-    // $ANTLR start "rule__BasicType__EntityAssignment"
-    // InternalEntities.g:865:1: rule__BasicType__EntityAssignment : ( ( RULE_ID ) ) ;
-    public final void rule__BasicType__EntityAssignment() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalEntities.g:869:1: ( ( ( RULE_ID ) ) )
-            // InternalEntities.g:870:2: ( ( RULE_ID ) )
-            {
-            // InternalEntities.g:870:2: ( ( RULE_ID ) )
-            // InternalEntities.g:871:3: ( RULE_ID )
-            {
-             before(grammarAccess.getBasicTypeAccess().getEntityEntityCrossReference_0()); 
-            // InternalEntities.g:872:3: ( RULE_ID )
-            // InternalEntities.g:873:4: RULE_ID
-            {
-             before(grammarAccess.getBasicTypeAccess().getEntityEntityIDTerminalRuleCall_0_1()); 
-            match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getBasicTypeAccess().getEntityEntityIDTerminalRuleCall_0_1()); 
-
-            }
-
-             after(grammarAccess.getBasicTypeAccess().getEntityEntityCrossReference_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__BasicType__EntityAssignment"
+    // $ANTLR end "rule__BasicType__TypeNameAssignment"
 
     // Delegated rules
 

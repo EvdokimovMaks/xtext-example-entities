@@ -372,40 +372,15 @@ ruleEntityType returns [EObject current=null]
 }:
 	(
 		(
-			(
-				lv_typeName_0_1='string'
-				{
-					newLeafNode(lv_typeName_0_1, grammarAccess.getEntityTypeAccess().getTypeNameStringKeyword_0_0());
+			{
+				if ($current==null) {
+					$current = createModelElement(grammarAccess.getEntityTypeRule());
 				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getEntityTypeRule());
-					}
-					setWithLastConsumed($current, "typeName", lv_typeName_0_1, null);
-				}
-				    |
-				lv_typeName_0_2='int'
-				{
-					newLeafNode(lv_typeName_0_2, grammarAccess.getEntityTypeAccess().getTypeNameIntKeyword_0_1());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getEntityTypeRule());
-					}
-					setWithLastConsumed($current, "typeName", lv_typeName_0_2, null);
-				}
-				    |
-				lv_typeName_0_3='boolean'
-				{
-					newLeafNode(lv_typeName_0_3, grammarAccess.getEntityTypeAccess().getTypeNameBooleanKeyword_0_2());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getEntityTypeRule());
-					}
-					setWithLastConsumed($current, "typeName", lv_typeName_0_3, null);
-				}
-			)
+			}
+			otherlv_0=RULE_ID
+			{
+				newLeafNode(otherlv_0, grammarAccess.getEntityTypeAccess().getEntityEntityCrossReference_0());
+			}
 		)
 	)
 ;
@@ -427,15 +402,40 @@ ruleBasicType returns [EObject current=null]
 }:
 	(
 		(
-			{
-				if ($current==null) {
-					$current = createModelElement(grammarAccess.getBasicTypeRule());
+			(
+				lv_typeName_0_1='string'
+				{
+					newLeafNode(lv_typeName_0_1, grammarAccess.getBasicTypeAccess().getTypeNameStringKeyword_0_0());
 				}
-			}
-			otherlv_0=RULE_ID
-			{
-				newLeafNode(otherlv_0, grammarAccess.getBasicTypeAccess().getEntityEntityCrossReference_0());
-			}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getBasicTypeRule());
+					}
+					setWithLastConsumed($current, "typeName", lv_typeName_0_1, null);
+				}
+				    |
+				lv_typeName_0_2='int'
+				{
+					newLeafNode(lv_typeName_0_2, grammarAccess.getBasicTypeAccess().getTypeNameIntKeyword_0_1());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getBasicTypeRule());
+					}
+					setWithLastConsumed($current, "typeName", lv_typeName_0_2, null);
+				}
+				    |
+				lv_typeName_0_3='boolean'
+				{
+					newLeafNode(lv_typeName_0_3, grammarAccess.getBasicTypeAccess().getTypeNameBooleanKeyword_0_2());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getBasicTypeRule());
+					}
+					setWithLastConsumed($current, "typeName", lv_typeName_0_3, null);
+				}
+			)
 		)
 	)
 ;

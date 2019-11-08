@@ -24,9 +24,9 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ElementType"/>
   <eClassifiers xsi:type="ecore:EClass" name="EntityType" eSuperTypes="#//ElementType">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entity" eType="#//Entity"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BasicType" eSuperTypes="#//ElementType">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="entity" eType="#//Entity"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

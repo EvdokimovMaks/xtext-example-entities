@@ -195,13 +195,32 @@ public class EntitiesGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	public class EntityTypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.example.entities.Entities.EntityType");
+		private final Assignment cEntityAssignment = (Assignment)rule.eContents().get(1);
+		private final CrossReference cEntityEntityCrossReference_0 = (CrossReference)cEntityAssignment.eContents().get(0);
+		private final RuleCall cEntityEntityIDTerminalRuleCall_0_1 = (RuleCall)cEntityEntityCrossReference_0.eContents().get(1);
+		
+		//EntityType:
+		//	entity=[Entity];
+		@Override public ParserRule getRule() { return rule; }
+		
+		//entity=[Entity]
+		public Assignment getEntityAssignment() { return cEntityAssignment; }
+		
+		//[Entity]
+		public CrossReference getEntityEntityCrossReference_0() { return cEntityEntityCrossReference_0; }
+		
+		//ID
+		public RuleCall getEntityEntityIDTerminalRuleCall_0_1() { return cEntityEntityIDTerminalRuleCall_0_1; }
+	}
+	public class BasicTypeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.example.entities.Entities.BasicType");
 		private final Assignment cTypeNameAssignment = (Assignment)rule.eContents().get(1);
 		private final Alternatives cTypeNameAlternatives_0 = (Alternatives)cTypeNameAssignment.eContents().get(0);
 		private final Keyword cTypeNameStringKeyword_0_0 = (Keyword)cTypeNameAlternatives_0.eContents().get(0);
 		private final Keyword cTypeNameIntKeyword_0_1 = (Keyword)cTypeNameAlternatives_0.eContents().get(1);
 		private final Keyword cTypeNameBooleanKeyword_0_2 = (Keyword)cTypeNameAlternatives_0.eContents().get(2);
 		
-		//EntityType:
+		//BasicType:
 		//	typeName=('string' | 'int' | 'boolean');
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -219,25 +238,6 @@ public class EntitiesGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//'boolean'
 		public Keyword getTypeNameBooleanKeyword_0_2() { return cTypeNameBooleanKeyword_0_2; }
-	}
-	public class BasicTypeElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.example.entities.Entities.BasicType");
-		private final Assignment cEntityAssignment = (Assignment)rule.eContents().get(1);
-		private final CrossReference cEntityEntityCrossReference_0 = (CrossReference)cEntityAssignment.eContents().get(0);
-		private final RuleCall cEntityEntityIDTerminalRuleCall_0_1 = (RuleCall)cEntityEntityCrossReference_0.eContents().get(1);
-		
-		//BasicType:
-		//	entity=[Entity];
-		@Override public ParserRule getRule() { return rule; }
-		
-		//entity=[Entity]
-		public Assignment getEntityAssignment() { return cEntityAssignment; }
-		
-		//[Entity]
-		public CrossReference getEntityEntityCrossReference_0() { return cEntityEntityCrossReference_0; }
-		
-		//ID
-		public RuleCall getEntityEntityIDTerminalRuleCall_0_1() { return cEntityEntityIDTerminalRuleCall_0_1; }
 	}
 	
 	
@@ -348,7 +348,7 @@ public class EntitiesGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//EntityType:
-	//	typeName=('string' | 'int' | 'boolean');
+	//	entity=[Entity];
 	public EntityTypeElements getEntityTypeAccess() {
 		return pEntityType;
 	}
@@ -358,7 +358,7 @@ public class EntitiesGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//BasicType:
-	//	entity=[Entity];
+	//	typeName=('string' | 'int' | 'boolean');
 	public BasicTypeElements getBasicTypeAccess() {
 		return pBasicType;
 	}

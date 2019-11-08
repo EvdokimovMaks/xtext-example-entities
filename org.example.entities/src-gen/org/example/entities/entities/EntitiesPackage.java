@@ -244,13 +244,13 @@ public interface EntitiesPackage extends EPackage
   int ENTITY_TYPE = 5;
 
   /**
-   * The feature id for the '<em><b>Type Name</b></em>' attribute.
+   * The feature id for the '<em><b>Entity</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ENTITY_TYPE__TYPE_NAME = ELEMENT_TYPE_FEATURE_COUNT + 0;
+  int ENTITY_TYPE__ENTITY = ELEMENT_TYPE_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Entity Type</em>' class.
@@ -272,13 +272,13 @@ public interface EntitiesPackage extends EPackage
   int BASIC_TYPE = 6;
 
   /**
-   * The feature id for the '<em><b>Entity</b></em>' reference.
+   * The feature id for the '<em><b>Type Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BASIC_TYPE__ENTITY = ELEMENT_TYPE_FEATURE_COUNT + 0;
+  int BASIC_TYPE__TYPE_NAME = ELEMENT_TYPE_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Basic Type</em>' class.
@@ -450,15 +450,15 @@ public interface EntitiesPackage extends EPackage
   EClass getEntityType();
 
   /**
-   * Returns the meta object for the attribute '{@link org.example.entities.entities.EntityType#getTypeName <em>Type Name</em>}'.
+   * Returns the meta object for the reference '{@link org.example.entities.entities.EntityType#getEntity <em>Entity</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Type Name</em>'.
-   * @see org.example.entities.entities.EntityType#getTypeName()
+   * @return the meta object for the reference '<em>Entity</em>'.
+   * @see org.example.entities.entities.EntityType#getEntity()
    * @see #getEntityType()
    * @generated
    */
-  EAttribute getEntityType_TypeName();
+  EReference getEntityType_Entity();
 
   /**
    * Returns the meta object for class '{@link org.example.entities.entities.BasicType <em>Basic Type</em>}'.
@@ -471,15 +471,15 @@ public interface EntitiesPackage extends EPackage
   EClass getBasicType();
 
   /**
-   * Returns the meta object for the reference '{@link org.example.entities.entities.BasicType#getEntity <em>Entity</em>}'.
+   * Returns the meta object for the attribute '{@link org.example.entities.entities.BasicType#getTypeName <em>Type Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Entity</em>'.
-   * @see org.example.entities.entities.BasicType#getEntity()
+   * @return the meta object for the attribute '<em>Type Name</em>'.
+   * @see org.example.entities.entities.BasicType#getTypeName()
    * @see #getBasicType()
    * @generated
    */
-  EReference getBasicType_Entity();
+  EAttribute getBasicType_TypeName();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -637,12 +637,12 @@ public interface EntitiesPackage extends EPackage
     EClass ENTITY_TYPE = eINSTANCE.getEntityType();
 
     /**
-     * The meta object literal for the '<em><b>Type Name</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Entity</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ENTITY_TYPE__TYPE_NAME = eINSTANCE.getEntityType_TypeName();
+    EReference ENTITY_TYPE__ENTITY = eINSTANCE.getEntityType_Entity();
 
     /**
      * The meta object literal for the '{@link org.example.entities.entities.impl.BasicTypeImpl <em>Basic Type</em>}' class.
@@ -655,12 +655,12 @@ public interface EntitiesPackage extends EPackage
     EClass BASIC_TYPE = eINSTANCE.getBasicType();
 
     /**
-     * The meta object literal for the '<em><b>Entity</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Type Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference BASIC_TYPE__ENTITY = eINSTANCE.getBasicType_Entity();
+    EAttribute BASIC_TYPE__TYPE_NAME = eINSTANCE.getBasicType_TypeName();
 
   }
 

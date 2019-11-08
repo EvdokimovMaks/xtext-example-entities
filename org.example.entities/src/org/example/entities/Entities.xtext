@@ -24,9 +24,9 @@ ElementType:
 ;
 
 EntityType:
-	typeName=('string'|'int'|'boolean')
+	entity=[Entity]
 ;
 
 BasicType:
-	entity=[Entity]
+	typeName=('string'|'int'|'boolean')
 ;

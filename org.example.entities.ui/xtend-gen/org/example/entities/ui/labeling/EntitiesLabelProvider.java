@@ -6,6 +6,10 @@ package org.example.entities.ui.labeling;
 import com.google.inject.Inject;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.xtext.ui.label.DefaultEObjectLabelProvider;
+import org.eclipse.xtext.xbase.lib.Extension;
+import org.example.entities.TypeRepresentation;
+import org.example.entities.entities.Attribute;
+import org.example.entities.entities.AttributeType;
 
 /**
  * Provides labels for EObjects.
@@ -17,5 +21,23 @@ public class EntitiesLabelProvider extends DefaultEObjectLabelProvider {
   @Inject
   public EntitiesLabelProvider(final AdapterFactoryLabelProvider delegate) {
     super(delegate);
+  }
+  
+  @Inject
+  @Extension
+  private TypeRepresentation _typeRepresentation;
+  
+  public String text(final Attribute a) {
+    String _name = a.getName();
+    String _xifexpression = null;
+    AttributeType _type = a.getType();
+    boolean _tripleNotEquals = (_type != null);
+    if (_tripleNotEquals) {
+      String _representation = this._typeRepresentation.representation(a.getType());
+      _xifexpression = (" : " + _representation);
+    } else {
+      _xifexpression = "";
+    }
+    return (_name + _xifexpression);
   }
 }

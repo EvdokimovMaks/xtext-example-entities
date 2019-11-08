@@ -311,9 +311,9 @@ public class EntitiesPackageImpl extends EPackageImpl implements EntitiesPackage
    * @generated
    */
   @Override
-  public EAttribute getEntityType_TypeName()
+  public EReference getEntityType_Entity()
   {
-    return (EAttribute)entityTypeEClass.getEStructuralFeatures().get(0);
+    return (EReference)entityTypeEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -333,9 +333,9 @@ public class EntitiesPackageImpl extends EPackageImpl implements EntitiesPackage
    * @generated
    */
   @Override
-  public EReference getBasicType_Entity()
+  public EAttribute getBasicType_TypeName()
   {
-    return (EReference)basicTypeEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)basicTypeEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -389,10 +389,10 @@ public class EntitiesPackageImpl extends EPackageImpl implements EntitiesPackage
     elementTypeEClass = createEClass(ELEMENT_TYPE);
 
     entityTypeEClass = createEClass(ENTITY_TYPE);
-    createEAttribute(entityTypeEClass, ENTITY_TYPE__TYPE_NAME);
+    createEReference(entityTypeEClass, ENTITY_TYPE__ENTITY);
 
     basicTypeEClass = createEClass(BASIC_TYPE);
-    createEReference(basicTypeEClass, BASIC_TYPE__ENTITY);
+    createEAttribute(basicTypeEClass, BASIC_TYPE__TYPE_NAME);
   }
 
   /**
@@ -448,10 +448,10 @@ public class EntitiesPackageImpl extends EPackageImpl implements EntitiesPackage
     initEClass(elementTypeEClass, ElementType.class, "ElementType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(entityTypeEClass, EntityType.class, "EntityType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getEntityType_TypeName(), ecorePackage.getEString(), "typeName", null, 0, 1, EntityType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEntityType_Entity(), this.getEntity(), null, "entity", null, 0, 1, EntityType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(basicTypeEClass, BasicType.class, "BasicType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getBasicType_Entity(), this.getEntity(), null, "entity", null, 0, 1, BasicType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getBasicType_TypeName(), ecorePackage.getEString(), "typeName", null, 0, 1, BasicType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

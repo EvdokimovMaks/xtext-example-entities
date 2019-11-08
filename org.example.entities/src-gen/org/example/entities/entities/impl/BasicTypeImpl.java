@@ -6,13 +6,11 @@ package org.example.entities.entities.impl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.example.entities.entities.BasicType;
 import org.example.entities.entities.EntitiesPackage;
-import org.example.entities.entities.Entity;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,7 +20,7 @@ import org.example.entities.entities.Entity;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.example.entities.entities.impl.BasicTypeImpl#getEntity <em>Entity</em>}</li>
+ *   <li>{@link org.example.entities.entities.impl.BasicTypeImpl#getTypeName <em>Type Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -30,14 +28,24 @@ import org.example.entities.entities.Entity;
 public class BasicTypeImpl extends ElementTypeImpl implements BasicType
 {
   /**
-   * The cached value of the '{@link #getEntity() <em>Entity</em>}' reference.
+   * The default value of the '{@link #getTypeName() <em>Type Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getEntity()
+   * @see #getTypeName()
    * @generated
    * @ordered
    */
-  protected Entity entity;
+  protected static final String TYPE_NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getTypeName() <em>Type Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getTypeName()
+   * @generated
+   * @ordered
+   */
+  protected String typeName = TYPE_NAME_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -66,29 +74,9 @@ public class BasicTypeImpl extends ElementTypeImpl implements BasicType
    * @generated
    */
   @Override
-  public Entity getEntity()
+  public String getTypeName()
   {
-    if (entity != null && entity.eIsProxy())
-    {
-      InternalEObject oldEntity = (InternalEObject)entity;
-      entity = (Entity)eResolveProxy(oldEntity);
-      if (entity != oldEntity)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, EntitiesPackage.BASIC_TYPE__ENTITY, oldEntity, entity));
-      }
-    }
-    return entity;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Entity basicGetEntity()
-  {
-    return entity;
+    return typeName;
   }
 
   /**
@@ -97,12 +85,12 @@ public class BasicTypeImpl extends ElementTypeImpl implements BasicType
    * @generated
    */
   @Override
-  public void setEntity(Entity newEntity)
+  public void setTypeName(String newTypeName)
   {
-    Entity oldEntity = entity;
-    entity = newEntity;
+    String oldTypeName = typeName;
+    typeName = newTypeName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EntitiesPackage.BASIC_TYPE__ENTITY, oldEntity, entity));
+      eNotify(new ENotificationImpl(this, Notification.SET, EntitiesPackage.BASIC_TYPE__TYPE_NAME, oldTypeName, typeName));
   }
 
   /**
@@ -115,9 +103,8 @@ public class BasicTypeImpl extends ElementTypeImpl implements BasicType
   {
     switch (featureID)
     {
-      case EntitiesPackage.BASIC_TYPE__ENTITY:
-        if (resolve) return getEntity();
-        return basicGetEntity();
+      case EntitiesPackage.BASIC_TYPE__TYPE_NAME:
+        return getTypeName();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -132,8 +119,8 @@ public class BasicTypeImpl extends ElementTypeImpl implements BasicType
   {
     switch (featureID)
     {
-      case EntitiesPackage.BASIC_TYPE__ENTITY:
-        setEntity((Entity)newValue);
+      case EntitiesPackage.BASIC_TYPE__TYPE_NAME:
+        setTypeName((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -149,8 +136,8 @@ public class BasicTypeImpl extends ElementTypeImpl implements BasicType
   {
     switch (featureID)
     {
-      case EntitiesPackage.BASIC_TYPE__ENTITY:
-        setEntity((Entity)null);
+      case EntitiesPackage.BASIC_TYPE__TYPE_NAME:
+        setTypeName(TYPE_NAME_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -166,10 +153,27 @@ public class BasicTypeImpl extends ElementTypeImpl implements BasicType
   {
     switch (featureID)
     {
-      case EntitiesPackage.BASIC_TYPE__ENTITY:
-        return entity != null;
+      case EntitiesPackage.BASIC_TYPE__TYPE_NAME:
+        return TYPE_NAME_EDEFAULT == null ? typeName != null : !TYPE_NAME_EDEFAULT.equals(typeName);
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (typeName: ");
+    result.append(typeName);
+    result.append(')');
+    return result.toString();
   }
 
 } //BasicTypeImpl
