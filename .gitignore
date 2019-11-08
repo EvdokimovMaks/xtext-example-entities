@@ -1,5 +1,5 @@
 /.metadata/
-*xtext-gen*
+*xtend-gen*
 *src-gen*
 */bin/*
 */test-bin/*
