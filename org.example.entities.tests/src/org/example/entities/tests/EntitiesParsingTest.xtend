@@ -13,12 +13,14 @@ import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.^extension.ExtendWith
 import org.junit.Assert
 import org.example.entities.entities.EntityType
+import org.eclipse.xtext.testing.validation.ValidationTestHelper
 
 @ExtendWith(InjectionExtension)
 @InjectWith(EntitiesInjectorProvider)
 class EntitiesParsingTest {
 	
 	@Inject extension ParseHelper<Model>
+	@Inject extension ValidationTestHelper
 	
 	@Test
 	def void loadModel() {
@@ -42,5 +44,14 @@ class EntitiesParsingTest {
 		val attribute = entity.attributes.get(0)
 		Assert.assertEquals("attribute", attribute.name)
 		Assert.assertEquals("MyEntity", (attribute.type.elementType as EntityType).entity.name);
+	}
+	
+	@Test
+	def void testCorrectParsing() {
+		'''
+			entity MyEntity {
+				boolean attribute;
+			}
+		'''.parse.assertNoErrors
 	}
 }
