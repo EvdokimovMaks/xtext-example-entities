@@ -8,6 +8,7 @@ import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider
 import org.eclipse.xtext.ui.label.DefaultEObjectLabelProvider
 import org.example.entities.entities.Attribute
 import org.example.entities.TypeRepresentation
+import org.example.entities.entities.Entity
 
 /**
  * Provides labels for EObjects.
@@ -27,4 +28,7 @@ class EntitiesLabelProvider extends DefaultEObjectLabelProvider {
 		a.name + if(a.type !== null) " : " + a.type.representation else ""
 	} 
 
+	def image(Entity e) { 'Entity.gif' }
+
+	def image(Attribute a) { 'Attribute.gif' }
 }

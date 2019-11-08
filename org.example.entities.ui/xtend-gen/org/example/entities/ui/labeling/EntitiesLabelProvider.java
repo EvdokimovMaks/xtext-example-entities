@@ -10,6 +10,7 @@ import org.eclipse.xtext.xbase.lib.Extension;
 import org.example.entities.TypeRepresentation;
 import org.example.entities.entities.Attribute;
 import org.example.entities.entities.AttributeType;
+import org.example.entities.entities.Entity;
 
 /**
  * Provides labels for EObjects.
@@ -39,5 +40,13 @@ public class EntitiesLabelProvider extends DefaultEObjectLabelProvider {
       _xifexpression = "";
     }
     return (_name + _xifexpression);
+  }
+  
+  public String image(final Entity e) {
+    return "Entity.gif";
+  }
+  
+  public String image(final Attribute a) {
+    return "Attribute.gif";
   }
 }
