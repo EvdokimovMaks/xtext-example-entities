@@ -25,6 +25,33 @@ class EntitiesValidatorTest {
 		'''.parse.assertCycleInHyerarchy("MyEntity")				
 	}
 	
+	@Test
+	def void testCicleInEntityHierarchy() {
+		'''
+			entity A extends B {}
+			entity B extends C {}
+			entity C extends A {}
+		'''.parse => [
+			assertCycleInHyerarchy('A')
+			assertCycleInHyerarchy('B')
+			assertCycleInHyerarchy('C')
+		]
+	}
+	
+	@Test
+	def void testCycleInHierarchyErrorPosition() {
+		val testInput =
+		'''
+			entity MyEntity extends MyEntity {}
+		'''
+		testInput.parse.assertError(
+			EntitiesPackage.eINSTANCE.entity,
+			EntitiesValidator.HIERARCHY_CYCLE,
+			testInput.lastIndexOf("MyEntity"),
+			"MyEntity".length
+		)
+	}
+	
 	def private assertCycleInHyerarchy(Model m, String entityName) {
 		m.assertError(
 			EntitiesPackage.eINSTANCE.entity,
